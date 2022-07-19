@@ -5,6 +5,7 @@
 @import "_Blog";
 @import "_Gallery";
 @import "_Contact";
+@import "video";
 
 body {
   font-family: "Libre Franklin", sans-serif;
@@ -1108,6 +1109,9 @@ body {
     margin-left: 60px;
     margin-right: 60px;
   }
+  .container {
+    padding: 0 60px;
+  }
 }
 
 
@@ -1240,6 +1244,10 @@ body {
     flex-direction: column;
     grid-gap: 30px;
     max-width: 100%;
+  }
+
+  .header__menu__nav {
+    grid-gap: 20px;
   }
   
 }
@@ -1389,5 +1397,9 @@ body {
 .Contact__top{
   margin-left: 30px;
   margin-right: 30px;
+}
+
+.container {
+  padding: 0 30px;
 }
 }
