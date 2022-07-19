@@ -29,3 +29,32 @@ VANTA.GLOBE({
 });
 
 
+$(document).ready(function(){
+  $('.burger__start').click(function(){
+    $('.header__nav__mrx').fadeTo(500, 1)
+    $('.header__nav__mrx').css('display','block')
+    $('.burger__end').css('display','block')
+    $('.burger__start').css('display','none')
+  })
+});
+
+$(document).ready(function(){
+  $('.burger__end').click(function(){
+    $('.header__nav__mrx').fadeTo(500, 1)
+    $('.header__nav__mrx').css('display','none')
+    $('.burger__end').css('display','none')
+    $('.burger__start').css('display','block')
+  })
+});
+
+
+if (mobileVersion) {
+  mobileVersion.addEventListener("click", () => {
+      const newWin = window.open("/", "example", "width=480px,height=600px");
+      newWin.onload = function () {
+          let div = newWin.document.createElement("div"),
+              body = newWin.document.body;
+          body.insertBefore(div, body.firstChild);
+      };
+  });
+}

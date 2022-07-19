@@ -39,6 +39,52 @@
     }
 
     &__title__h2{
-        @include fontAll(30px,700,$link);
+        @include fontAll(1.875rem,700,$link);
+    }
+}
+
+
+@media (max-width:1220px){
+    .margin__buttom {
+        margin-bottom: -40px;
+    }
+
+    .About__title__data__minu{
+        flex-wrap: wrap;
+    }
+}
+
+
+@media (max-width:800px){
+    .About__text{
+        max-width: 100% !important;
+        max-height: 100% !important;
+    }
+
+    .About__title__data__h3{
+        font-size: 2rem;
+    }
+
+    .Aboutus__title__h2{
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (max-width:380px){
+    .Aboutus__title__h2{
+        font-size: 1rem;
+    }
+
+    .Aboutus {
+        height: 115px;
+    }
+
+    .About__title__data__h3{
+        font-size: 1.8rem;
+    }
+
+    .Designers__cart1 {
+        height: 350px !important;
     }
 }

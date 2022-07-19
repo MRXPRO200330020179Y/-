@@ -1,0 +1,192 @@
+// Contact start
+
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 500px;
+    position: relative;
+    height: 0;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 500px;
+    width: 100%;
+    position: absolute;
+}
+
+.Contact {
+    background-color: $cart;
+    position: relative;
+    z-index: 10;
+
+    &__button {
+        background-color: #393939;
+        width: 74px;
+        height: 74px;
+        position: relative;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        color: $max;
+
+        svg {
+            @include fiximg(30px, 30px, true);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__title__h3 {
+        @include fontAll(1.5rem, 700, $link);
+        margin-bottom: 45px;
+    }
+
+    &__cart1__title__h5 {
+        @include fontAll(1.125rem, 400, $text);
+        padding-bottom: 4px;
+    }
+
+    &__cart1__title__h4 {
+        @include fontAll(1.125rem, 400, $link);
+    }
+
+    &__cart1__text {
+        margin-left: 26px;
+        margin-bottom: 15px;
+        height: 72px;
+        padding-top: 10px;
+    }
+
+    &__cart1 {
+        display: flex;
+        align-items: center;
+    }
+
+    &__top {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        grid-gap: 20px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    &__cart2__input {
+        width: 310px;
+        height: 50px;
+        padding: 0 10px 0 20px;
+        background-color: #393939;
+        margin-bottom: 30px;
+        outline: none;
+        border: none;
+
+        &::placeholder {
+            @include fontAll(1rem, 400, $text);
+        }
+
+        &:focus::placeholder {
+            @include fontAll(1rem, 400, #000);
+        }
+
+        &:focus {
+            background-color: #fff;
+            color: #000;
+            @include fontAll(1rem, 400, #000);
+        }
+    }
+
+    &__cart2__textarea {
+        width: 652px;
+        @include fontAll(1rem, 400, $text);
+        outline: none;
+        border: none;
+        height: 110px;
+        background-color: #393939;
+        margin-bottom: 45px;
+        padding-left: 20px;
+        padding-top: 12px;
+        resize: none;
+
+        &::placeholder {
+            @include fontAll(1rem, 400, $text);
+        }
+
+        &:focus::placeholder {
+            @include fontAll(1rem, 400, #000);
+        }
+
+        &:focus {
+            background-color: #fff;
+            color: #000;
+            @include fontAll(1rem, 400, #000);
+        }
+    }
+
+    &__cart2__button {
+        @include fontAll(1rem, 700, $link);
+        background-color: $max;
+        min-width: 182px;
+        height: 46px;
+        padding: 0 10px;
+    }
+}
+
+.Contact__cart2__input+.Contact__cart2__input {
+    margin-left: 30px;
+}
+
+// Contact end
+
+
+@media (max-width:1350px){
+    .Contact__top{
+        padding: 50px 0;
+    }
+
+    .Contact__cart2__input {
+        width: 100%;
+    }
+
+    .Contact__cart2__input + .Contact__cart2__input {
+        margin-left: 0px;
+    }
+
+    .Contact__cart2__textarea{
+        width: 100%;
+    }
+
+    .Contact__cart2 {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width:850px){
+    .map-responsive iframe {
+        height: 400px;
+    }
+
+    .map-responsive{
+        padding-bottom: 400px;
+    }
+}
+
+
+
+@media (max-width:750px){
+    .Contact__top{
+        flex-direction: column;
+    }
+
+
+    .map-responsive iframe {
+        height: 300px;
+    }
+
+    .map-responsive{
+        padding-bottom: 300px;
+    }
+}

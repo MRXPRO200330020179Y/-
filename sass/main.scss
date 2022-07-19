@@ -9,11 +9,11 @@
 body {
   font-family: "Libre Franklin", sans-serif;
   background-color: $fon;
+  overflow-x: hidden;
 }
 
 .container1 {
   max-width: 1170px;
-  overflow: hidden;
   margin: 0 auto;
 }
 
@@ -29,6 +29,12 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 24px 0 30px;
+    
+    menu{
+      display: flex;
+      align-items: center;
+      grid-gap: 30px;
+    }
   }
 
   &__menu__nav {
@@ -49,7 +55,7 @@ body {
   }
 
   &__minu__link {
-    @include fontAll(16px, 700, $link);
+    @include fontAll(1rem, 700, $link);
     @extend%transition;
     &:hover {
       color: $max;
@@ -58,6 +64,19 @@ body {
       color: $max;
     }
   }
+
+  &__burger__start{
+    @include fontAll(1.4rem, 700, #ff4361);
+    @extend%transition;
+    width: 20px;
+    height: 20px;
+    margin-top: -6px;
+  }
+}
+
+.header__burger,
+.burger__end{
+  display: none;
 }
 
 // header end
@@ -76,18 +95,18 @@ body {
   }
 
   &__title__h6 {
-    @include fontAll(16px, 700, $max);
+    @include fontAll(1rem, 700, $max);
     text-transform: uppercase;
     letter-spacing: 2px;
   }
 
   &__title__h1 {
-    @include fontAll(60px, 700, $link);
+    @include fontAll(3.75rem, 700, $link);
     padding: 30px 0 10px 0;
   }
 
   &__text {
-    @include fontAll(16px, 400, $link);
+    @include fontAll(1rem, 400, $link);
     margin-bottom: 45px;
     overflow: hidden;
     max-height: 75px;
@@ -95,7 +114,7 @@ body {
   }
 
   &__link {
-    @include fontAll(16px, 700, $link);
+    @include fontAll(1rem, 700, $link);
     background-color: $max;
     padding: 12px 30px 10px;
     
@@ -123,19 +142,19 @@ body {
   }
 
   &__title__h6 {
-    @include fontAll(16px, 700, $max);
+    @include fontAll(1rem, 700, $max);
     text-transform: uppercase;
     letter-spacing: 2px;
   }
 
   &__title__h2 {
-    @include fontAll(45px, 700, $link);
+    @include fontAll(2.8125rem, 700, $link);
     padding-top: 14px;
     padding-bottom: 10px;
   }
 
   &__text {
-    @include fontAll(16px, 400, $text);
+    @include fontAll(1rem, 400, $text);
     margin-bottom: 37px;
     overflow: hidden;
     max-height: 230px;
@@ -144,7 +163,7 @@ body {
   }
 
   &__link {
-    @include fontAll(16px, 700, $link);
+    @include fontAll(1rem, 700, $link);
     background-color: $max;
     padding: 12px 30px 10px;
   }
@@ -168,14 +187,14 @@ body {
   }
 
   &__title__data__h3{
-    @include fontAll(36px,700,$link);
+    @include fontAll(2.25rem,700,$link);
     margin-bottom: 10px;
     width: 100px;
     overflow: hidden
   }
 
   &__title__data__h5{
-    @include fontAll(16px,400,$text);
+    @include fontAll(1rem,400,$text);
     letter-spacing: 2px;
     text-transform: uppercase;
   }
@@ -189,7 +208,7 @@ body {
   padding-bottom: 80px;
 
   &__title__h6 {
-    @include fontAll(14px, 700, $max);
+    @include fontAll(0.875rem, 700, $max);
     letter-spacing: 2px;
     text-align: center;
     text-transform: uppercase;
@@ -198,7 +217,7 @@ body {
 
   &__title__h2 {
     padding-top: 14px;
-    @include fontAll(45px, 700, $link);
+    @include fontAll(2.8125rem, 700, $link);
     text-align: center;
   }
 
@@ -208,11 +227,13 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 70px;
+    grid-gap: 20px;
   }
 
   &__cart {
     width: 360px;
     height: 325px;
+    flex: 0 0 31%;
     background-color: $cart;
     padding: 46px 50px 0;
     @extend%transition;
@@ -228,7 +249,7 @@ body {
   }
 
   &__cart__h4 {
-    @include fontAll(22px, 700, $link);
+    @include fontAll(1.375rem, 700, $link);
     padding: 33px 0 25px 0;
     text-align: center;
   }
@@ -236,7 +257,7 @@ body {
   &__cart__text {
     text-align: center;
     line-height: 26px;
-    @include fontAll(16px, 400, $text);
+    @include fontAll(1rem, 400, $text);
     margin-bottom: 50px;
     overflow: hidden;
     max-height: 100px;
@@ -258,14 +279,14 @@ body {
   }
 
   &__title__h5 {
-    @include fontAll(14px, 700, $max);
+    @include fontAll(0.875rem, 700, $max);
     letter-spacing: 2px;
     text-transform: uppercase;
     text-align: center;
   }
 
   &__title__h2 {
-    @include fontAll(45px, 700, $link);
+    @include fontAll(2.8125rem, 700, $link);
     padding-top: 14px;
     text-align: center;
   }
@@ -336,8 +357,8 @@ body {
     padding: 16px 16px 9px 16px;
     position: relative;
     background-color: $max;
-    @include fontAll(26px,400,$link);
-    @include fiximg(24px,26px,true);
+    @include fontAll(1.625rem,400,$link);
+    @include fiximg(1.5rem,26px,true);
   }
 
   &__right {
@@ -390,13 +411,13 @@ body {
   padding: 100px 0;
 
   &__cart1__title__h5 {
-    @include fontAll(14px, 700, $max);
+    @include fontAll(0.875rem, 700, $max);
     letter-spacing: 2px;
     text-transform: uppercase;
   }
 
   &__cart1__title__h2 {
-    @include fontAll(45px, 700, $link);
+    @include fontAll(2.8125rem, 700, $link);
     max-width: 350px;
     text-align: left;
     margin-top: 14px;
@@ -406,7 +427,7 @@ body {
   }
 
   &__cart1__link {
-    @include fontAll(16px, 700, $link);
+    @include fontAll(1rem, 700, $link);
     background-color: $max;
     padding: 12px 30px 10px;
   }
@@ -424,18 +445,18 @@ body {
   }
 
   &__max__title__h2 {
-    @include fontAll(48px, 700, $max);
+    @include fontAll(3rem, 700, $max);
     width: 140px;
     overflow: hidden;
   }
 
   &__max__title__h3 {
-    @include fontAll(22px, 700, $link);
+    @include fontAll(1.375rem, 700, $link);
     margin-bottom: 12px;
   }
 
   &__max__text {
-    @include fontAll(16px, 400, $text);
+    @include fontAll(1rem, 400, $text);
     line-height: 26px;
     max-height: 100px;
     overflow: hidden;
@@ -480,18 +501,18 @@ body {
   }
 
   &__title__h3 {
-    @include fontAll(22px, 700, $link);
+    @include fontAll(1.375rem, 700, $link);
     margin-bottom: 4px;
   }
 
   &__title__h5 {
-    @include fontAll(12px, normol, $max);
+    @include fontAll(0.75rem, normol, $max);
     letter-spacing: 1px;
     text-transform: uppercase;
   }
 
   &__text {
-    @include fontAll(16px, 400, $text);
+    @include fontAll(1rem, 400, $text);
     margin-bottom: 15px;
     line-height: 26px;
     padding-top: 5px;
@@ -511,14 +532,14 @@ body {
   padding: 80px 0;
 
   &__title__h2 {
-    @include fontAll(45px, 700, $link);
+    @include fontAll(2.8125rem, 700, $link);
     margin-bottom: 20px;
     text-align: center;
   }
 
   &__text {
     margin-bottom: 45px;
-    @include fontAll(16px, 400, $link);
+    @include fontAll(1rem, 400, $link);
     line-height: 26px;
     text-align: center;
     max-width: 950px;
@@ -529,7 +550,7 @@ body {
 
   &__link {
     padding: 12px 30px 10px;
-    @include fontAll(16px, 700, $max);
+    @include fontAll(1rem, 700, $max);
     background-color: $link;
     position: absolute;
   }
@@ -550,14 +571,14 @@ body {
   padding-bottom: 80px;
 
   &__title__h5 {
-    @include fontAll(14px, 700, $max);
+    @include fontAll(0.875rem, 700, $max);
     letter-spacing: 2px;
     text-align: center;
     text-transform: uppercase;
   }
 
   &__title__h2 {
-    @include fontAll(45px, 700, $link);
+    @include fontAll(2.8125rem, 700, $link);
     margin-top: 14px;
     text-align: center;
   }
@@ -568,6 +589,7 @@ body {
     height: 435px;
     background-size: cover;
     background-repeat: no-repeat;
+    flex: 0 0 30%;
   }
 
   &__top {
@@ -594,7 +616,7 @@ body {
   }
 
   &__hover__text{
-    @include fontAll(16px,400,#b3b3b3);
+    @include fontAll(1rem,400,#b3b3b3);
     margin-bottom: 32px;
     line-height: 26px;
     max-height: 155px;
@@ -602,12 +624,12 @@ body {
   }
 
   &__hover__title__h3{
-    @include fontAll(22px,700,$link);
+    @include fontAll(1.375rem,700,$link);
     margin-bottom: 4px;
   }
 
   &__hover__title__h6{
-    @include fontAll(12px,400,$max);
+    @include fontAll(0.75rem,400,$max);
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -653,14 +675,14 @@ body {
   }
 
   &__title__h5 {
-    @include fontAll(14, 700, $max);
+    @include fontAll(0.875rem, 700, $max);
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align: center;
   }
 
   &__title__h2 {
-    @include fontAll(45px, 700, $link);
+    @include fontAll(2.8125rem, 700, $link);
     margin-top: 14px;
     margin-bottom: 60px;
     text-align: center;
@@ -689,27 +711,27 @@ body {
   }
 
   &__li__data {
-    @include fontAll(14px, 400, $max);
+    @include fontAll(0.875rem, 400, $max);
     svg {
       @include fiximg(13px, 14px, true);
       margin-top: 2px;
     }
   }
 &__li__data1{
-  @include fontAll(14px, 400, $link);
+  @include fontAll(0.875rem, 400, $link);
   svg {
     @include fiximg(13px, 14px, true);
     margin-top: 2px;
   }
 }
   &__title__cart__link {
-    @include fontAll(24px, 700, $link);
+    @include fontAll(1.5rem, 700, $link);
     line-height: 32px;
   }
 
   &__title__cart__h4 {
     margin-bottom: 42px;
-    @include fontAll(16px, 400, $text);
+    @include fontAll(1rem, 400, $text);
     line-height: 26px;
     margin-top: 22px;
     max-height: 100px;
@@ -718,7 +740,7 @@ body {
 
   &__title__cart1__h4{
     margin-bottom: 42px;
-    @include fontAll(16px, 400, $link);
+    @include fontAll(1rem, 400, $link);
     line-height: 26px;
     margin-top: 22px;
     max-height: 100px;
@@ -740,18 +762,18 @@ body {
   }
 
   &__title__cart__h3 {
-    @include fontAll(18px, 700, $link);
+    @include fontAll(1.125rem, 700, $link);
     margin-bottom: 4px;
   }
 
   &__title__cart__h5 {
-    @include fontAll(12px, 400, $max);
+    @include fontAll(0.75rem, 400, $max);
     text-transform: uppercase;
     letter-spacing: 1px;
   }
 
   &__title__cart1__h5{
-    @include fontAll(12px, 400, $link);
+    @include fontAll(0.75rem, 400, $link);
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -783,7 +805,7 @@ body {
     margin-bottom: 20px;
   }
   &__link{
-    @include fontAll(16px,700,$link);
+    @include fontAll(1rem,700,$link);
     background-color: $cart;
     border: 2px solid $max;
     padding: 12px 30px 10px;
@@ -811,7 +833,7 @@ body {
     }
 
     &__ul__li{
-        @include fontAll(16px,400,$text);
+        @include fontAll(1rem,400,$text);
         overflow: hidden;
         max-height: 60px;
         line-height: 30px;
@@ -833,7 +855,7 @@ body {
         height: 41px;
         border-radius: 50%;
         background-color: #303030;
-        @include fontAll(16px,400,$link);
+        @include fontAll(1rem,400,$link);
         svg {
             @include fiximg(14px, 16px, true);
             margin-top: 2px;
@@ -841,17 +863,17 @@ body {
     }
 
     &__cart2__title__h2{
-        @include fontAll(20px,700,$link);
+        @include fontAll(1.25rem,700,$link);
         margin-bottom: 20px;
     }
 
     &__cart2__ul__link{
-        @include fontAll(16px,400,$text);
+        @include fontAll(1rem,400,$text);
         line-height: 36px;
     }
 
     &__cart3__txet{
-        @include fontAll(18px,400,$text);
+        @include fontAll(1.125rem,400,$text);
         line-height: 26px;
         margin-bottom: 15px;
         max-width: 263px;
@@ -860,7 +882,7 @@ body {
     }
 
     &__cart3__input{
-        @include fontAll(14px,400,$text);
+        @include fontAll(0.875rem,400,$text);
         padding-left: 20px;
         padding-right: 10px;
         height: 46px;
@@ -870,7 +892,7 @@ body {
         outline: none;
         margin-bottom: 10px;
         &::placeholder{
-            @include fontAll(14px,400,$text);
+            @include fontAll(0.875rem,400,$text);
         }
     }
     &__cart3__button{
@@ -891,7 +913,7 @@ body {
     }
 
     &__Group{
-        @include fontAll(16px,400,$text);
+        @include fontAll(1rem,400,$text);
         margin-bottom: 15px;
         line-height: 26px;
         padding-top: 50px;
@@ -905,7 +927,7 @@ body {
           }
     }
     &__Group__link{
-        @include fontAll(16px,400,$text);
+        @include fontAll(1rem,400,$text);
         padding-left: 5px;
         @extend%transition;
         &:hover{
@@ -914,3 +936,458 @@ body {
     }
 }
 //footer end
+
+
+
+
+
+// anemation start
+
+#preloder {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  background: #000;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 60px;
+  animation: loader 0.8s linear infinite;
+  -webkit-animation: loader 0.8s linear infinite;
+}
+
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    border: 4px solid #f44336;
+    border-left-color: transparent;
+  }
+
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    border: 4px solid #673ab7;
+    border-left-color: transparent;
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    border: 4px solid #f44336;
+    border-left-color: transparent;
+  }
+}
+
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    border: 4px solid #f44336;
+    border-left-color: transparent;
+  }
+
+  50% {
+    -webkit-transform: rotate(180deg);
+    border: 4px solid #673ab7;
+    border-left-color: transparent;
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    border: 4px solid #f44336;
+    border-left-color: transparent;
+  }
+}
+
+
+// anemation end
+
+
+
+
+@media (max-width:1610px){
+  .Reality__logo2 {
+    width: 650px;
+    height: 325px;
+  }
+
+  .Reality__logo3 {
+    width: 324.5px;
+    height: 325px;
+  }
+
+  .Reality__lieft {
+    width: 650px;
+    height: 650px;
+  }
+
+  .Reality__continer {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+}
+
+
+@media (max-width:1350px){
+  .Reality__logo2 {
+    width: 550px;
+    height: 300px;
+  }
+
+  .Reality__logo3 {
+    width: 275px; 
+    height: 300px;
+  }
+
+  .Reality__lieft {
+    width: 550px;
+    height: 600px;
+  }
+
+  .Reality__continer {
+    max-width: 1220px;
+    margin: 0 auto;
+  }
+
+  .About__title__h2,
+  .Services__title__h2,
+  .Reality__title__h2,
+  .Trends__title__h2,
+  .From__title__h2,
+  .Events__cart1__title__h2{
+    font-size: 2.5rem;
+  }
+
+  .From__cart1,
+  .From__cart2{
+    width: 510px;
+  }
+
+  .vanta-canvas,.Fashion{
+    height: 600px !important;
+  }
+
+
+  .Fashion__top {
+    width: 1000px;
+  }
+
+  .header__top,
+  .Fashion__top,
+  .About,
+  .Services__pro,
+  .Services__top,
+  .Reality__title__h5,
+  .Reality__title__h2,
+  .Reality__top,
+  .Events__top,
+  .Padilla__top,
+  .Trends__title__h2,
+  .Trends__text,
+  .Designers__title__h5,
+  .Designers__title__h2,
+  .Designers__top,
+  .From__title__h5,
+  .From__title__h2,
+  .From__top,
+  .footer__top,
+  .footer__Group,
+  .Aboutus__pro,
+  .Gallery__nav__minu,
+  .container__grid,
+  .Contact__top{
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+}
+
+
+@media  (max-width:1220px) {
+  .About,
+  .Events,
+  .Designers,
+  .From{
+    padding: 50px 0;
+  }
+
+  .Trends{
+    height: auto;
+    padding: 50px 0 90px;
+  }
+
+  .Reality__pro{
+    padding-top: 50px;
+  }
+
+  .Services,
+  .Padilla{
+    padding-bottom: 50px;
+  }
+
+  .Reality__pro{
+    height: 320px;
+  }
+
+
+  .Reality__logo2 {
+    width: 450px;
+    height: 250px;
+  }
+
+  .Reality__logo3 {
+    width: 225px; 
+    height: 250px;
+  }
+
+  .Reality__lieft {
+    width: 450px;
+    height: 500px;
+  }
+
+  .Reality__continer {
+    max-width: 1020px;
+    margin: 0 auto;
+  }
+
+  .footer__top{
+    flex-wrap: wrap;
+    grid-gap: 20px;
+  }
+}
+
+
+@media (max-width:1150px){
+  .Fashion__top {
+    width: 830px;
+  }
+
+  .About__title__h2,
+  .Services__title__h2,
+  .Reality__title__h2,
+  .Trends__title__h2,
+  .From__title__h2,
+  .Events__cart1__title__h2{
+    font-size: 2rem;
+  }
+
+  .From__top{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .From__cart1,
+  .From__cart2{
+    width: 100%;
+  }
+}
+
+
+@media (max-width:1000px){
+  .Designers__cart1{
+    flex: 0 0 46%;
+  }
+
+  .Reality__top {
+    display: grid;
+    grid-gap: 0;
+    grid-template-areas:
+        "header header"
+        "sidebar sidebar"
+        "botom botom1";
+    margin-top: -150px;
+}
+
+
+  .Reality__continer {
+    max-width: 570px;
+    margin: 0 auto;
+  }
+
+}
+
+
+
+@media (max-width:950px){
+  .Fashion__top {
+    width: 650px;
+  }
+
+  .Fashion__title__h1{
+    font-size: 3rem;
+  }
+
+
+  .vanta-canvas, .Fashion {
+    height: 500px !important;
+  }
+
+
+  .Services__cart {
+    flex: 0 0 46%;
+  }
+
+  .Events__max__cart1,
+  .Events__top,
+  .Padilla__top{
+    flex-direction: column;
+    grid-gap: 30px;
+    max-width: 100%;
+  }
+  
+}
+
+
+
+@media (max-width:800px){
+  .header__burger{
+    display: block;
+  }
+
+  .header__nav__mrx{
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    display: none;
+    background-color:rgb(48,48,48,95%);
+    border-right: 2px solid #ff4361;
+  }
+
+  .header__menu__nav{
+    flex-direction: column;
+    align-items:flex-start;
+    grid-gap: 20px;
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+
+
+  .About__logo {
+    width: 100%;
+    height: auto;
+    flex: 0 0 100%;
+  }
+
+  .About__cart {
+    width: 100%;
+  }
+
+  .About{
+    flex-direction: column;
+  }
+
+
+  .Fashion__top {
+    width: auto;
+  }
+
+
+  .vanta-canvas, .Fashion {
+    height: 400px !important;
+  }
+
+
+  .About__title__h2, .Services__title__h2, .Reality__title__h2, .Trends__title__h2, .From__title__h2, .Events__cart1__title__h2 {
+    font-size: 1.8rem;
+  }
+
+  .Fashion__title__h1 {
+    font-size: 2.8rem;
+  }
+
+  .Designers__cart1,.Services__cart{
+    flex: 0 0 100%;
+}
+}
+
+
+@media (max-width:600px){
+  .Reality__lieft, .Reality__logo2, .Reality__logo3, .Padilla__cart1{
+    width: 100%;
+  }
+
+  .Padilla__cart1{
+    flex-direction: column;
+    height: auto;
+  }
+
+  .Reality__lieft{
+    height: 300px;
+  }
+
+  .Reality__logo2{
+    height: 150px;
+  }
+
+  .Reality__logo3{
+    height: 150px;
+  }
+
+  .From__title__cart__link{
+    font-size: 1.2rem;
+  }
+
+  .From__cart1 {
+    flex-direction: column;
+    height: auto;
+    padding-right: 0;
+    padding-bottom: 30px;
+  }
+
+  .From__logo {
+    width: 100%;
+    height: auto;
+    flex: auto;
+}
+
+.From__pro{
+  padding-left: 20px;
+}
+
+.header__nav__mrx{
+  width: 80%;
+}
+
+
+.header__top menu {
+  grid-gap: 20px;
+}
+
+.header__top,
+.Fashion__top,
+.About,
+.Services__pro,
+.Services__top,
+.Reality__title__h5,
+.Reality__title__h2,
+.Reality__top,
+.Events__top,
+.Padilla__top,
+.Trends__title__h2,
+.Trends__text,
+.Designers__title__h5,
+.Designers__title__h2,
+.Designers__top,
+.From__title__h5,
+.From__title__h2,
+.From__top,
+.footer__top,
+.footer__Group,
+.Aboutus__pro,
+.Gallery__nav__minu,
+.container__grid,
+.Contact__top{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+}
