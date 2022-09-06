@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "Mn_projic",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
