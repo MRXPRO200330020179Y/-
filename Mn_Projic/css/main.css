@@ -671,6 +671,7 @@ body {
 .container1 {
   max-width: 1170px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .header {
